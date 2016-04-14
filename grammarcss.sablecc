@@ -1,0 +1,32 @@
+Package css.syntax;
+
+Helpers
+
+  letter = ['a'..'z'];
+  digit = ['0'..'9'];
+
+  
+States
+  text, tag, closetag;
+  
+Tokens
+
+  id = '#'(letter | digit)+;
+  class = '.'(letter | digit)+;
+  tag = (letter | digit)+;
+  seletor = '>';
+
+  blank = ' '+;
+    
+Ignored Tokens
+	blank;
+	
+
+  
+
+
+	
+	
+	
+	
+	

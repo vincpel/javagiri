@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	runtime 'com.peterlavalle:sablecc-maven.sablecc:3.7'
+    compile 'org.slf4j:slf4j-api:1.7.18'
+    testCompile 'junit:junit:4.12'
+}
+
+
+task showMeCache << {
+  configurations.compile.each { println it }
+}
+
+task clean_sablecc(type: Delete) {
+      delete fileTree(dir: "src/main/java/syntax")
+}
+
+
+task run_sablecc(type: Exec) {
+     commandLine = ['sablecc','-d','src/main/java', 'grammar.sablecc']
+}
+
+task clean_sablecccss(type: Delete) {
+      delete fileTree(dir: "src/main/java/syntax")
+}
+
+
+task run_sablecccss(type: Exec) {
+     commandLine = ['sablecc','-d','src/main/java', 'grammarcss.sablecc']
+}
+
+task trythis(type: Exec) {
+
+     commandLine = ['ls', '/']
+}

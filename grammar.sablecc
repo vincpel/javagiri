@@ -1,0 +1,110 @@
+Package syntax;
+
+Helpers
+
+  letter = (['a'..'z']|['A'..'Z']);
+  digit = ['0'..'9'];
+
+  any = [0..0xffff];
+  
+  comment_body = [ any - '>'];
+  
+  not_less_than = [ any - '<'];
+  
+  text = not_less_than;
+ 
+
+  
+
+States
+  text, tag, closetag, comment;
+  
+Tokens
+
+  
+
+  
+  
+  {text} text = not_less_than+;
+  
+  
+  
+  
+  {text->comment} commentb = '<!';
+  {comment} commentbodyt = comment_body*;
+  {comment->text} commente = '>';
+  
+  
+  
+  
+  {text->tag} bigin_tag = '<';
+  {tag} tagname = (letter|digit)+;
+  
+  
+  
+  
+  
+  {tag} attr_key = (letter|digit)*'=';
+  //{tag} assign = '=';
+  {tag} attr_value = '"'[ any - '"']*'"';
+  {tag} blank = ' '+;
+  
+  {tag->text} end_sinngle_tag = '/>';
+  {tag->text} end_tag = '>';
+  
+  {text->closetag} bigin_closetag = '<''/'' '*;
+  {closetag} closetagname = (letter|digit)+;
+  {closetag->text} end_closetag = ' '*'>';
+  
+  
+Ignored Tokens
+	blank,	commentb, commentbodyt, commente;
+	  
+  
+
+	
+
+
+Productions
+	
+	htmldocument = 
+		tags;
+		
+	tags = 	
+		{singletag} bigin_tag tagname attributes* end_sinngle_tag |
+		{tag} openmarker tags* closemarker |
+		{text} text;
+		
+	
+
+    openmarker = 
+    	bigin_tag tagname attributes* end_tag;
+    	 
+    closemarker = 
+        bigin_closetag  closetagname end_closetag;
+		
+	attributes =
+		//{many} attributes attr_key  attr_value  |
+		//{one}  attr_key  attr_value ;
+		attr_key  attr_value ;
+	
+
+
+	//attribute =
+	//	 attr_key  attr_value ;
+
+	innertext = 
+		text ;
+
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
