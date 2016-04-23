@@ -27,7 +27,6 @@ public class Examples {
 	private static String tests2 = "<html>\n\u0009<body> \n\u0009\u0009<div><div class=\"big\"><div><div class=\"small\" ></div></div></div></div>\n\u0009\u0009texte libre pouvant contenir \"ceci\" ou cela. Lien: \n\u0009\u0009<p id=\"pargraphe1\">un paaragraphe</p>\n\u0009\u0009<a href=\"http://sablecc.org\">SableCC</a>\n\u0009\u0009\n\u0009\u0009<a href=\"http://sablecc.org\">SableCC</a>\n\u0009\u0009<div class=\"small\" ><p>embedend p</p></div>\n\u0009\u0009\n\u0009</body>\n</html>";
 	
 	public static void main(String[] args) throws IOException, JavaGiriException {
-		// TODO Auto-generated method stub
 
 		System.out.println("=============================================================");
 		System.out.println("example1");
