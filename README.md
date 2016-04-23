@@ -62,18 +62,15 @@ public class Examples {
 ```
 =============================================================
 example1
-bp
 < div class= "small" > </ div > 
 
 =============================================================
 example2
-bp
 < div class= "small" > </ div > 
 < div class= "small" > < p > embedend p </ p > </ div > 
 
 =============================================================
 example3
-bp
 < div > < div class= "big" > < div > < div class= "small" > </ div > </ div > </ div > </ div > 
 
 
@@ -84,6 +81,5 @@ bp
 
 =============================================================
 example4
-bp
 < div class= "small" > </ div > 
 ```
