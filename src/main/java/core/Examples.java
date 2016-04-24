@@ -32,7 +32,7 @@ public class Examples {
 	
 	
 	public static void main(String[] args) throws IOException, JavaGiriException {
-		// TODO Auto-generated method stub
+		
 
 		System.out.println("=============================================================");
 		System.out.println("example1");
