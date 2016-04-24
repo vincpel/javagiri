@@ -17,6 +17,7 @@ public class Interpreter  extends DepthFirstAdapter {
 	private Selectors fullSelectorslist;  // keeps track of the full set , and if need to be RESETED 
 
 	private Selectors selToVerity;
+
 	boolean openTagWasMath;
 	boolean atttributeWasMatch;
 

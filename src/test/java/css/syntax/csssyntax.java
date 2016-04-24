@@ -32,7 +32,7 @@ public class csssyntax {
 	
 	@Test
 	public void test2() throws LexerException, IOException {
-		StringReader in = new StringReader("div#big> div > table[1] > tr");
+		StringReader in = new StringReader("div#big> div > table > tr");
         
         Lexer lexer = new Lexer(new PushbackReader(in, 1024));
         
