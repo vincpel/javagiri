@@ -1,9 +1,9 @@
 # javagiri
+Cette librairie implémente une API coulante pour manipuler un DOM HTML dans le style je jQuery et nokogiri. Elle utilise [SableCC](http://www.sablecc.org) pour générer les outils qui travail sur le document HTML.
 
-Cette librairy implemente une API coulante pour manipuler un DOM html dans le style je jQuery et nokogiri. Elle utilise [SableCC](http://www.sablecc.org) pour generer les outils qui travail sur le document html.
+## Détails d'implémentation
+La classe Interpreter.java implémente le DepthFirstAdapter. Elle traverse la structure générée Tag par Tag munis d'une pile qui contient les attributs css à comparer. En cours de visite, Lors-ce-qu'il voit que les attributs ne concorde pas le visiteur réinitialisera sa pile d'attribut avant de lancer la visite des nœuds enfants.Cela pour trouver les éventuelles enfants du nœud courant qui serait candidat.
 
-## Details d'implementation
-La classe Interpreter.java implement le DepthFirstAdapter. Elle traverse la stucture générer  Tag par Tag munis d'une pile qui contient les attribut css à comparer. En cours de visite, Lorse qu'il voit que les attributs ne concorde pas le visiteur réinitialisera sa pile d'attribut avant de lancer la visite des noeuds enfants.Cela pour  trouver les eventuelles enfants du noeud courrant qui serait candidat
 
 ## Voici un cas d'utilisation 
 avec le document Html suivant:
@@ -20,7 +20,7 @@ avec le document Html suivant:
 </html>
 ```
 
-on peut executer ce type comportement
+on peut executer ce type comportement:
 ```Java
 public class Examples {
 	
